@@ -4,24 +4,34 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Pemanggilan class Scanner
         Scanner keyboard = new Scanner(System.in);
 
+        //Membuat sample array untuk list nanti dan soal 
         String opsi[] = {"Belah Ketupat","Segitiga","Persegi"};
 
         System.out.println("1. Penerapan if else dengan penerapan nested\n"+
                               "   loop untuk for dengan studi kasus bebas.\n");
 
+        //Membuat Daftar menu pilihan
         System.out.println("Pilihlah Bentuk berikut:");
         for (int i = 0; i < opsi.length; i++) {
             System.out.print("Ketik "+(i+1)+" untuk membuat ");
             System.out.println(opsi[i]);
         }
+        //Membuat Input
         System.out.print("Silahkan ketik : ");
         int input = keyboard.nextInt();
+        
+        //Ini digunakan untuk menentukan banyaknya titik 
         System.out.print("Tentukan Panjang Titiknya : ");
         int n = keyboard.nextInt();
+        
+        //Membuat kondisi dengan opsi 1-3
         if (input == 1){
+            //Ketika kondisi dipanggil ini digunakan untuk menampilkan belah ketupat
             System.out.println("Belah Ketupat\nDiagonal 1 = "+(n*2+1)+" titik \nDiagonal 2 = "+(n*2+1)+" titik");
+            //Perulangan for untuk segitiga bagian atas
             for (int i = 0; i <= n; i++) {
                 for (int j = n; j > i; j--) {
                     System.out.print("   ");
@@ -37,6 +47,7 @@ public class Main {
                 }
                 System.out.println();
             }
+            //Perulangan for untuk segitiga bagian bawah
             for (int i = 1; i <= n; i++) {
 
                 for (int j = 0; j < i; j++) {
@@ -55,6 +66,7 @@ public class Main {
                 System.out.println("");
             }
         }else if (input == 2){
+            //Ketika kondisi dipanggil ini digunakan untuk menampilkan Segtiga
             System.out.println("Segitiga\n Alas = "+(n*2+1)+" titik \n Tinggi = "+(n+1)+" titik");
             for (int i = 0; i <= n; i++) {
                 for (int j = n; j > i; j--) {
@@ -72,6 +84,8 @@ public class Main {
                 System.out.println();
             }
         }else if (input == 3){
+            //Ketika kondisi dipanggil ini digunakan untuk menampilkan Persegi
+
             System.out.println("Persegi\n Sisi = "+(n*2+1)+ " titik");
             for (int i = 0; i <= n; i++) {
                 for (int j = n; j > i; j--) {
@@ -106,25 +120,37 @@ public class Main {
                 System.out.println("");
             }
         }else {
+            //Ketika kondisi dipanggil ini jika opsi yang di input salah
+
             System.out.println("Pilihan tidak sesuai");
         }
 
+        //Selanjutnya dibawah ini untuk soal nomor 2
+
         System.out.println("\n\n2. Penerapan switch case dengan for dan while");
 
+        //Membuat list untuk opsi nomor 2
         System.out.println("Ketik 1 untuk menghitung Luas");
         System.out.println("Ketik 2 untuk menghitung Deret Matematika");
         System.out.print("Pilih salah satu : ");
+        //Input untuk opsi 
         int inputDua = keyboard.nextInt();
 
+        //Penggunaan switch berdasarkan data dari Input dua
         switch (inputDua){
             case 1:
+                //Kondisi jika input diisi 1
                 for (int i = 0; i < opsi.length; i++) {
                     System.out.print("Ketik "+(i+1)+" untuk menghitung luas ");
                     System.out.println(opsi[i]);
                 }
                 int bentuk = keyboard.nextInt();
+                
+                //Membuat percabangan dengan membuat switch
                 switch (bentuk){
                     case 1:
+                        //Kondisi jika input diisi 1
+
                         System.out.print("Masukan \nDiagonal = ");
                         int diagonal1= keyboard.nextInt();
 
@@ -134,6 +160,8 @@ public class Main {
                         System.out.println("     = "+((diagonal1*diagonal1)/2));
                         break;
                     case 2:
+                        //Kondisi jika input diisi 2
+
                         System.out.print("Masukan \nAlas = ");
                         int alas= keyboard.nextInt();
                         System.out.print("Tinggi = ");
@@ -145,6 +173,8 @@ public class Main {
                         System.out.println("     = "+((alas*tinggi)/2));
                         break;
                     case 3:
+                        //Kondisi jika input diisi 3
+
                         System.out.print("Masukan \nSisi = ");
                         int sisi= keyboard.nextInt();
 
@@ -157,6 +187,8 @@ public class Main {
                 }
                 break;
             case 2:
+                //Kondisi jika input diisi 2
+
                 System.out.println("Pilih jenis peritungan Deret Matematika");
                 String deret[] = {"Bilangan Ganjil","Bilangan Genap","Fibonacci"};
                 for (int i = 0; i < deret.length; i++) {
